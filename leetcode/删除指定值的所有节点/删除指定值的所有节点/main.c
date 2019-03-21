@@ -16,28 +16,29 @@
  * };
  */
 
-struct ListNode {
+ struct ListNode {
 	int val;
 	struct ListNode *next;
 };
-struct HeadListNode {
-	struct ListNode* head;
-};
+
+
+	
 
 struct ListNode* removeElements(struct ListNode* head, int val) {
-	struct ListNode* cur = head;
 	struct ListNode* save = NULL;
-	/*if (head->val == val) {
+	while (head->val  == val) {
 		save = head->next;
 		free(head);
 		head = save;
-	}*/
-	struct ListNode* first
+	}
+
+	struct ListNode* cur = head;
 	while (cur) {
 		if (cur->next->val == val) {
 			//save = cur->next->next;
-			cur->next = cur->next->next;
+			save = cur->next->next;
 			free(cur->next);
+			cur->next = save;
 		}
 		cur = cur->next;
 	}
