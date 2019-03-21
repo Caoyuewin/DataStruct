@@ -6,7 +6,7 @@ void SListPushhead(SL* s, SLDatatype v) {
 	assert(s);
 	Node* node = malloc(sizeof(Node));
 	node->value = v;
-	node->next = s->first;
+	node->next = s;
 	s->first = node;
 }
 
@@ -42,15 +42,27 @@ void SListPophead(SL* s) {
 //尾删
 void SListPopBack(SL* s) {
 	assert(s);
-	//assert(s->first);
-
+	assert(s->first);
+	//只有一个节点
+	if (s->first->next == NULL) {
+		free(s->first->next);
+		s->first == NULL;
+		return;
+	}
+	//有一个以上的节点
+	Node* current = s->first;
+	while (current != 0) {
+		current = current->next;
+	}
+	free(current->next);
+	current->next = NULL;
 }
 
 void SListRemove(SL* s, SLDatatype v) {
 	assert(s);
 	if (s->first == NULL)
 		return;
-	if (s->value == v) {
+	if (s->first->value == v) {
 		Node* next = s->first->next;
 		free(s->first);
 		s->first == next;

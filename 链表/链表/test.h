@@ -13,7 +13,6 @@ typedef struct ListNode {
 
 typedef struct SList {
 	
-	SLDatatype value;
 	Node* first;
 }SL;
 
