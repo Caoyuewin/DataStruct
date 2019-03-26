@@ -5,8 +5,14 @@
 
 
 typedef int ElemType;
+
 typedef struct {
 	ElemType* base;
 	ElemType* top;
 	int stacksize;
-};
+}Stack;
+
+void Initstack(Stack s) {
+
+
+}

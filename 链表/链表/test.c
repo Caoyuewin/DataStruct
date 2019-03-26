@@ -58,7 +58,8 @@ void SListPopBack(SL* s) {
 	current->next = NULL;
 }
 
-void SListRemove(SL* s, SLDatatype v) {
+//删除所有值为V的结点
+void SListRemoveAll(SL* s, SLDatatype v) {
 	assert(s);
 	if (s->first == NULL)
 		return;
@@ -66,23 +67,15 @@ void SListRemove(SL* s, SLDatatype v) {
 		Node* next = s->first->next;
 		free(s->first);
 		s->first == next;
-		return;
 	}
 	Node* current = s->first;
 
 	while (current != NULL) {
 		if (current->next->value == v) {
-			Node* node = ;
-		}
-	}
-}
-
-void SListRemove(SL* s, SLDatatype v) {
-	Node* current = s->first;
-	while (current->next != NULL) {
-		if (current->next->value == v) {
 			Node* next = current->next->next;
-			
+			free(current->next);
+			current->next = next;
 		}
+		current = current->next;
 	}
 }
