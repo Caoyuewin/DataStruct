@@ -31,18 +31,10 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
 	struct ListNode* current1 = l1;
 	struct ListNode* current2 = l2;
 	while (current1->next != NULL && current2->next != NULL) {
-		if (current2->val >= current1->val) {
-			//l2Í·É¾ºó²åÈël1
-			/*struct ListNode* next1 = current1->next;
-			struct ListNode* next2 = current2->next;
-			current1->next = current2;
-			current2->next = next1;
-			current2 = next2;*/
+		while (current2->val > current1->val) {
 			current1 = current1->next;
-
 		}
-		else {
-			//current1 = current1->next;
+		else {dd
 		}
 	}
 	if (current2->next == NULL) {
