@@ -13,6 +13,7 @@ int main (){
   InitHeap(&hp);
   CreateHeap(&hp, sizeof(a) / sizeof(a[0]), a);
   PrintHeap(&hp, sizeof(a) / sizeof(a[0]));
+  printf("%d\n", TopHeap(&hp));
 
   return 0;
 }
