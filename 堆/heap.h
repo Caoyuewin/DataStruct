@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<malloc.h>
 #include<assert.h>
+#include<memory.h>
 
 typedef int Datatype;
 
@@ -17,3 +18,5 @@ void InitHeap(Heap* hp);
 Datatype TopHeap(Heap* hp);
 void EraseHeap (Heap* hp, int size);
 Datatype EmptyHeap(Heap* hp);
+void AdjustUp(Heap* hp, Datatype child);
+void Insert(Heap* hp, Datatype data);

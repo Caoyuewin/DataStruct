@@ -75,6 +75,7 @@ Datatype TopHeap(Heap* hp){
   return hp->_array[0];
 }
 
+//Is the heap empty?
 Datatype EmptyHeap(Heap* hp){
   assert(hp);
   return hp->_size == 0;
@@ -91,5 +92,40 @@ void EraseHeap(Heap* hp, int size){
 
 }
 
+//check capacity
+void CheckCapacity(Heap* hp){
+  if(hp->_capacity == hp->_size){
+    Datatype* p = (Datatype*)malloc(2 * hp->_size * sizeof(Datatype));
+    if(p != NULL){
+      memcpy(p, hp->_array, hp->_size * sizeof(Datatype));
+      free(hp->_array);
+      hp->_array = p;
+      hp->_capacity *= 2;
+    }
+  }
+      return;
+}
+
+//AdjustUp
+void AdjustUp(Heap* hp, Datatype child){
+  Datatype parent = (child - 1)/2;
+  while(parent >= 0){
+    if(hp->_array[parent] >hp->_array[child]){
+      Swap(&hp->_array[parent], &hp->_array[child]);
+      child = parent;
+      parent = (child - 1)/2;
+
+    }
+    else return;
+  }  
+}
+
+//Insert an element
+void Insert(Heap* hp, Datatype data){
+  CheckCapacity(hp);
+  hp->_array[hp->_size] = data;
+  hp->_size++;
+  AdjustUp(hp, hp->_size - 1);
+}
 
 
