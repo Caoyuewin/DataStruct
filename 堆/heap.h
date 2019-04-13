@@ -12,11 +12,11 @@ typedef struct Heap{
 
 }Heap;
 
-void CreateHeap(Heap* hp, Datatype size, Datatype* _array);
+void CreateHeap_Small(Heap* hp, Datatype size, Datatype* _array);
+void CreateHeap_Big(Heap* hp, Datatype size, Datatype* _array);
 void DestoryHeap(Heap* hp);
 void InitHeap(Heap* hp);
 Datatype TopHeap(Heap* hp);
 void EraseHeap (Heap* hp, int size);
-Datatype EmptyHeap(Heap* hp);
-void AdjustUp(Heap* hp, Datatype child);
-void Insert(Heap* hp, Datatype data);
+void Insert_Small(Heap* hp, Datatype data);
+void Insert_Big(Heap* hp, Datatype data);
