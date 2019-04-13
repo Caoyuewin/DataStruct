@@ -38,7 +38,7 @@ void CreateHeap(Heap* hp, Datatype size, Datatype* a){
     return;
   }
   //开辟堆的空间
-  Datatype* p = (Datatype*)malloc(sizeof(a));
+  Datatype* p = (Datatype*)malloc(size * sizeof(Datatype));
       if(p != NULL){
         hp->_array = p;  
       }

@@ -13,15 +13,15 @@ int main (){
   InitHeap(&hp);
   CreateHeap(&hp, sizeof(a) / sizeof(a[0]), a);
   PrintHeap(&hp);
-  printf("\n");
-  printf("%d\n", TopHeap(&hp));
-  printf("\n");
+  //printf("\n");
+  //printf("%d\n", TopHeap(&hp));
+  //printf("\n");
   //EraseHeap(&hp,hp._size);
   //PrintHeap(&hp, hp._size);
   Insert(&hp, 3);
-  printf("\n");
+  //printf("\n");
   PrintHeap(&hp);
-  //DestoryHeap(&hp);
+  DestoryHeap(&hp);
 
   return 0;
 }
