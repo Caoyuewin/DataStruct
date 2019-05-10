@@ -24,14 +24,29 @@ struct ListNode {
 };
 
 struct ListNode* addTwoNumbers(struct ListNode*p1, struct ListNode* p2) {
-
+  struct ListNode* sum = (struct ListNode*)malloc(sizeof(struct ListNode));
+  struct ListNode* cur = sum;
+  while(p1 || p2){
+    struct ListNode* node = (struct ListNode*)malloc(sizeof(struct ListNode));
+    node->next = nullptr;
+    if(p1 && p2){
+      cur->val = p1->val + p2->val;
+      cur->next = node; 
+      cur = node;
+    }
+    else if(!p1){
+      cur->val = p2->val;
+      cur->next = node;
+      cur = node;
+    }
+    else{
+      cur->val = p1->val;
+      cur->next = node;
+      cur = node;
+    }
+    p1 = p1->next;
+    p2 = p2->next;
+  }
+  return sum;
 }
 
-int main() {
-	ListNode num1 = { 243 };
-
-
-
-	system("pause");
-	return 0;
-}
