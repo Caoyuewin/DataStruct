@@ -26,19 +26,23 @@ struct ListNode {
 struct ListNode* addTwoNumbers(struct ListNode*p1, struct ListNode* p2) {
   struct ListNode* sum = (struct ListNode*)malloc(sizeof(struct ListNode));
   struct ListNode* cur = sum;
+  //p1或者p2不为空
   while(p1 || p2){
     struct ListNode* node = (struct ListNode*)malloc(sizeof(struct ListNode));
     node->next = nullptr;
+    //p1，p2都不为空
     if(p1 && p2){
       cur->val = p1->val + p2->val;
       cur->next = node; 
       cur = node;
     }
+    //p1为空
     else if(!p1){
       cur->val = p2->val;
       cur->next = node;
       cur = node;
     }
+    //p2为空
     else{
       cur->val = p1->val;
       cur->next = node;
