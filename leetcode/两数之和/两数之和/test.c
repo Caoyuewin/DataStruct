@@ -33,18 +33,27 @@ struct ListNode* addTwoNumbers(struct ListNode*p1, struct ListNode* p2) {
     //p1，p2都不为空
     if(p1 && p2){
       cur->val = p1->val + p2->val;
+      if(cur->val >= 10){
+        cur->val %= 10;
+      }
       cur->next = node; 
       cur = node;
     }
     //p1为空
     else if(!p1){
       cur->val = p2->val;
+      if(cur->val >= 10){
+        cur->val %= 10;
+      }
       cur->next = node;
       cur = node;
     }
     //p2为空
     else{
       cur->val = p1->val;
+      if(cur->val >= 10){
+        cur->val %= 10;
+      }
       cur->next = node;
       cur = node;
     }
