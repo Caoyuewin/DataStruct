@@ -85,6 +85,8 @@ void sqlist::PrintList(){
 int main() {
   int a[2] = {1,2};
   sqlist list(sizeof(a) / sizeof(a[0]), a);
+  list.HeadInsert(0);
+  list.TailInsert(3);
   list.PrintList();
   return 0;
 }
