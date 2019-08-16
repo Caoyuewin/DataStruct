@@ -13,8 +13,8 @@ public:
             for(size_t j = 0; j < i; ++j) {
                 if(_num[i] < _num[j]) {
                     int tmp = _num[i];
-                    _num.erase(_num.begin() + i - 1);
-                    _num.insert(_num.begin() + j - 1, tmp);
+                    _num.erase(_num.begin() + i);
+                    _num.insert(_num.begin() + j, tmp);
                     break;
                 }
             }
