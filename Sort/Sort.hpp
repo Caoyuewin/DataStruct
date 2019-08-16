@@ -10,7 +10,7 @@ public:
         if(_num.size() <= 1) 
             return;
         for(size_t i = 1; i < _num.size(); ++i) {
-            for(size_t j = 0; j < i - 1; ++j)  {
+            for(size_t j = 0; j < i; ++j) {
                 if(_num[i] < _num[j]) {
                     int tmp = _num[i];
                     _num.erase(_num.begin() + i - 1);
