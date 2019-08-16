@@ -42,14 +42,11 @@ struct ListNode* middleNode(struct ListNode* head) {
     fast = fast->next->next;
   
 
-}
+  }
+
 }
 
-Node* CreateNdoe(ElemType value){
-  Node* node =(Node*)malloc(sizeof(Node)); 
-  node->val = value;
-  node->next = NULL; 
-}
+
 
 
 

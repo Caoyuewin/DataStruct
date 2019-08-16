@@ -2,9 +2,11 @@
 
 typedef int ElemType;
 
-typedef struct Node{
+typedef struct ListNode{
   ElemType val;
   Node *next;
 }Node; 
+
+
 
 

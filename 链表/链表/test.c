@@ -4,7 +4,7 @@
 //Í·²å
 void SListPushhead(SL* s, SLDatatype v) {
 	assert(s);
-	Node* node = malloc(sizeof(Node));
+	Node* node = malloc(sizeof(ListNode));
 	node->value = v;
 	node->next = s;
 	s->first = node;
@@ -17,7 +17,7 @@ void SListPushBack(SL* s, SLDatatype v) {
 	Node* node = malloc(sizeof(Node));
 	node->value = v;
 	node->next = NULL;
-	if (s->first = NULL)
+	if (s->first == NULL)
 	{
 		s->first = node;
 		return;

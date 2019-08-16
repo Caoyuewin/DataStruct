@@ -90,7 +90,7 @@ void CreateHeap_Big(Heap* hp, Datatype size, Datatype* a){
     return;
   }
   //开辟堆的空间
-  Datatype* p = (Datatype*)malloc(size * sizeof(Datatype));
+  Datatype* p = (Datatype*)malloc(sizeof(Datatype) * size);
       if(p != NULL){
         hp->_array = p;  
       }
@@ -213,3 +213,9 @@ void Insert_Big(Heap* hp, Datatype data){
   AdjustUp_Big(hp, hp->_size - 1);
 }
 
+void HeapSort(Datatype* array, Datatype size){
+  int i = 0;
+  for(i = size - 1; i > 1; i--){
+    
+  }
+}
