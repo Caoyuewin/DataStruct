@@ -1,6 +1,6 @@
 .PHONY:all
 
-all:TestSort
+all:TestSort 
 
-TestSort:TestSort.cc
+TestSort:TestSort.cc Sort.hpp
 	g++ $^ -o $@ -std=c++11

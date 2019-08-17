@@ -3,9 +3,12 @@
 using namespace std;
 
 int main() {
-    vector<int> num{9,43,457,567,3,45,2,34,5,2,56,24,35,2,43,236,324,5,2,43};
+    vector<int> num{9,1,2,5,7,4,8,6,3,5};
     Sort sort(num);
-    sort.StraightInsert();
+    //sort.StraightInsert();
+    //sort.ShellSort();
+    //sort.SelectSort();
+    sort.BubbleSort();
     sort.Print();
     return 0;
 }
